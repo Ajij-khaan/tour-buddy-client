@@ -40,6 +40,8 @@ const BookTour = () => {
                     <p className="mt-3">{showTour?.description}</p>
                 </Container>
             </div>
+
+
         </div>
     );
 };

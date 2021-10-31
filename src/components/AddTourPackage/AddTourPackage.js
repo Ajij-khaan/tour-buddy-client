@@ -24,6 +24,13 @@ const AddTourPackage = () => {
             },
             body: JSON.stringify(newUser)
         })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('successfully added the user');
+                    e.target.reset();
+                }
+            })
 
 
         e.preventDefault()
