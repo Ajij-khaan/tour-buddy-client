@@ -9,6 +9,7 @@ import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import BookTour from './components/BookTour/BookTour';
 import AddTourPackage from './components/AddTourPackage/AddTourPackage';
+import ManageAllOrder from './components/ManageAllOrder/ManageAllOrder';
 
 
 function App() {
@@ -30,8 +31,8 @@ function App() {
             <PrivateRoute path="/booktour/:orderId">
               <BookTour></BookTour>
             </PrivateRoute>
-            <Route path="/allorder">
-              <Tours></Tours>
+            <Route path="/manageallorder">
+              <ManageAllOrder></ManageAllOrder>
             </Route>
             <Route path="/addtour">
               <AddTourPackage></AddTourPackage>

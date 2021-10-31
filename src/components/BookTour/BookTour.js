@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Placeholder } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../../hook/useAuth';
 import { useForm } from "react-hook-form";
@@ -50,9 +50,7 @@ const BookTour = () => {
                     reset();
                 }
             })
-
     }
-
 
 
     return (
@@ -72,11 +70,11 @@ const BookTour = () => {
             </div>
 
 
-            <h1>{user.email}</h1>
+            <h1>Book Now</h1>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name",)} placeholder="Name" defaultValue={user.displayName} />
-                <input {...register("email",)} placeholder="Email" />
+                <input {...register("name",)} placeholder="Name" defaultValue={user?.displayName} />
+                <input {...register("email",)} placeholder="Email" defaultValue={user?.email} />
                 <input {...register("address",)} placeholder="Address" />
                 <input type="submit" value="Book Now" />
             </form>
