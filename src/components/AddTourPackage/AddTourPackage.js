@@ -1,21 +1,44 @@
 import React, { useRef } from 'react';
 
 const AddTourPackage = () => {
-    const id = useRef();
-    const name = useRef();
-    const price = useRef();
-    const duration = useRef();
-    const description = useRef();
-    const img = useRef();
+    const nameRef = useRef();
+    const priceRef = useRef();
+    const durationRef = useRef();
+    const descriptionRef = useRef();
+    const imgRef = useRef();
+
+
+    const handleAddTour = e => {
+        const name = nameRef.current.value;
+        const price = priceRef.current.value;
+        const duration = durationRef.current.value;
+        const description = descriptionRef.current.value;
+        const img = imgRef.current.value;
+
+        const newUser = { name, price, duration, description, img };
+
+        fetch('http://localhost:5000/tours', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+        })
+
+
+        e.preventDefault()
+    }
+
     return (
         <div>
             <h1>Please add a Tour Package</h1>
-            <form>
-                <input type="text" ref={name} placeholder="name" />
-                <input type="text" ref={price} placeholder="price" />
-                <input type="text" ref={duration} placeholder="duration" />
-                <input type="text" ref={description} placeholder="description" />
-                <input type="text" ref={img} placeholder="img" />
+            <form onSubmit={handleAddTour}>
+                <input type="text" ref={nameRef} placeholder="name" />
+                <input type="text" ref={priceRef} placeholder="price" />
+                <input type="text" ref={durationRef} placeholder="duration" />
+                <input type="text" ref={descriptionRef} placeholder="description" />
+                <input type="text" ref={imgRef} placeholder="img" />
+                <input type="submit" value="Submit" />
 
             </form>
 
