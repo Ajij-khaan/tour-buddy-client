@@ -3,10 +3,12 @@ import Home from './components/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Tours from './components/Tours/Tours';
 import NotFound from './components/NotFound/NotFound';
-import MyOrder from './components/MyOrder/MyOrder';
 import SignIn from './components/SignIn/SignIn';
 import Header from './components/Header/Header';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import BookTour from './components/BookTour/BookTour';
+import AddTourPackage from './components/AddTourPackage/AddTourPackage';
 
 
 function App() {
@@ -25,14 +27,14 @@ function App() {
             <Route path="/tours">
               <Tours></Tours>
             </Route>
-            <Route path="/myorder">
-              <MyOrder></MyOrder>
-            </Route>
+            <PrivateRoute path="/booktour/:orderId">
+              <BookTour></BookTour>
+            </PrivateRoute>
             <Route path="/allorder">
               <Tours></Tours>
             </Route>
-            <Route path="/addservice">
-              <Tours></Tours>
+            <Route path="/addtour">
+              <AddTourPackage></AddTourPackage>
             </Route>
             <Route path="/signIn">
               <SignIn></SignIn>

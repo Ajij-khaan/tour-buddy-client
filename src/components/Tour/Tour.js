@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Package = (props) => {
-    const { id, name, img, description } = props.tour;
+    const { _id, name, img, description } = props.tour;
     return (
         <div>
             <div className="">
@@ -15,7 +15,7 @@ const Package = (props) => {
                             <Card.Text>
                                 {description.slice(0, 250)}
                             </Card.Text>
-                            <Link to={'/home'}> <button className="btn btn-primary ">Book Tour</button></Link>
+                            <Link to={`/booktour/${_id}`}> <button className="btn btn-primary ">Book Tour</button></Link>
                         </Card.Body>
                     </Card>
                 </Col>

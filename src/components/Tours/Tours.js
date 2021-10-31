@@ -5,7 +5,7 @@ import Tour from '../Tour/Tour'
 const Package = () => {
     const [tours, setTours] = useState([]);
     useEffect(() => {
-        fetch('./fakeData.json')
+        fetch('http://localhost:5000/tours')
             .then(res => res.json())
             .then(data => setTours(data))
     }, [])
@@ -17,7 +17,7 @@ const Package = () => {
             <Container className="mb-5">
                 <Row id="services" xs={1} md={2} lg={3} className="g-4 mt-5border-primary">
                     {
-                        tours.map(tour => <Tour key={tour.id} tour={tour}></Tour>)
+                        tours.map(tour => <Tour key={tour._id} tour={tour}></Tour>)
                     }
                 </Row>
             </Container>
