@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Placeholder } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import useAuth from '../../hook/useAuth';
+import { useForm } from "react-hook-form";
+
 
 const BookTour = () => {
     const { orderId } = useParams();
 
     const [tours, setTours] = useState([]);
     const [showTour, setShowTour] = useState([]);
+
+    //Get user emial and apss
+    const { user } = useAuth();
 
     useEffect(() => {
         fetch('http://localhost:5000/tours')
@@ -22,6 +28,30 @@ const BookTour = () => {
     }, [tours])
 
     console.log(showTour);
+
+
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        // console.log(data);
+        const newOrder = { name: data.name, email: data.email, orderDetails: showTour };
+        console.log(newOrder)
+
+        fetch('http://localhost:5000/manageorder', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newOrder)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('successfully added the user');
+                    reset();
+                }
+            })
+
+    }
 
 
 
@@ -41,6 +71,15 @@ const BookTour = () => {
                 </Container>
             </div>
 
+
+            <h1>{user.email}</h1>
+
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("name",)} placeholder="Name" defaultValue={user.displayName} />
+                <input {...register("email",)} placeholder="Email" />
+                <input {...register("address",)} placeholder="Address" />
+                <input type="submit" value="Book Now" />
+            </form>
 
         </div>
     );
