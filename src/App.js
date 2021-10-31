@@ -10,6 +10,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import BookTour from './components/BookTour/BookTour';
 import AddTourPackage from './components/AddTourPackage/AddTourPackage';
 import ManageAllOrder from './components/ManageAllOrder/ManageAllOrder';
+import MyOrder from './components/MyOrder/MyOrder';
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/tours">
               <Tours></Tours>
+            </Route>
+            <Route path="/myorder">
+              <MyOrder></MyOrder>
             </Route>
             <PrivateRoute path="/booktour/:orderId">
               <BookTour></BookTour>
