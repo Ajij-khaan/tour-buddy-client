@@ -10,7 +10,7 @@ const googleImg = 'https://i.ibb.co/p3C2Tq2/google.jpg';
 
 
 const SignIn = () => {
-    const { signInUsingGoogle, user, setUser } = useAuth();
+    const { signInUsingGoogle, user, setUser, setIsLoading } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -23,6 +23,7 @@ const SignIn = () => {
                 console.log(user)
                 history.push(redirect_uri);
             })
+            .finally(() => setIsLoading(false));
     }
 
 
