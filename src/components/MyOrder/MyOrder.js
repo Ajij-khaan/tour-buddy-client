@@ -9,7 +9,7 @@ const MyOrder = () => {
     const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/manageorder')
+        fetch('https://frozen-brook-65027.herokuapp.com/manageorder')
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [])
@@ -19,7 +19,7 @@ const MyOrder = () => {
 
     const handleDelete = id => {
         console.log(id);
-        fetch(`http://localhost:5000/manageorder/${id}`, {
+        fetch(`https://frozen-brook-65027.herokuapp.com/manageorder/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',

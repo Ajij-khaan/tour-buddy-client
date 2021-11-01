@@ -15,7 +15,7 @@ const BookTour = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch('http://localhost:5000/tours')
+        fetch('https://frozen-brook-65027.herokuapp.com/tours')
             .then(res => res.json())
             .then(data => setTours(data))
     }, [])
@@ -36,7 +36,7 @@ const BookTour = () => {
         const newOrder = { name: data.name, email: data.email, shipping: data.address, orderDetails: showTour };
         console.log(newOrder)
 
-        fetch('http://localhost:5000/manageorder', {
+        fetch('https://frozen-brook-65027.herokuapp.com/manageorder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

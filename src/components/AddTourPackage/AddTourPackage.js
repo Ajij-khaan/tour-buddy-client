@@ -17,7 +17,7 @@ const AddTourPackage = () => {
 
         const newUser = { name, price, duration, description, img };
 
-        fetch('http://localhost:5000/tours', {
+        fetch('https://frozen-brook-65027.herokuapp.com/tours', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

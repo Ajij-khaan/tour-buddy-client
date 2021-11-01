@@ -9,7 +9,7 @@ const Subscribe = () => {
             background: `url('https://i.ibb.co/zRG1Sv1/megan-clark-Zsb-VBil-AN6-Q-unsplash.jpg')`, backgroundRepeat: "no-repeat", width: '100%', backgroundPosition: 'center'
         }}>
             <div className=" py-5 mt-5">
-                <p className="text-white fs-3 text text-uppercase fw-bold">Connec with us to get 20% disocunt</p>
+                <p className="text-white fs-3 text text-uppercase fw-bold">Connect with us to get 20% discount</p>
                 <Container className="d-flex justify-content-center bg- py-5 rounded">
                     <Row xs={1} md={3}>
                         <Col>

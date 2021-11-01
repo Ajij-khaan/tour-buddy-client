@@ -32,11 +32,11 @@ const Header = () => {
 
                                 <Nav.Link as={Link} to="/addtour" className="fw-bold text-dark">Add Tours</Nav.Link>
                             }
+                            <Nav.Link as={HashLink} to="/home#contact" className="fw-bold text-dark">Contact</Nav.Link>
                             {!user?.displayName &&
 
                                 <Nav.Link as={Link} to="/signIn" className="text-white btn btn-danger rounded-pill px-4 fw-bold">SignIn</Nav.Link>
                             }
-                            <Nav.Link as={HashLink} to="/home#contact" className="fw-bold text-dark">Contact</Nav.Link>
 
                             {user?.displayName &&
                                 <div className="ms-5 d-flex align-items-center text-danger">Howday! {user.displayName} </div>
