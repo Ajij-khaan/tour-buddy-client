@@ -11,12 +11,12 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark">
                 <Container className="fw-bold">
-                    <Navbar.Brand as={Link} to="/home" className="fw-bold text-dark">TOUR BUDDY</Navbar.Brand>
-                    <Navbar.Toggle />
-                    <Navbar.Collapse className="justify-content-end">
+                    <Navbar.Brand as={Link} to="/home" className="fw-bold text-dark my-3">TOUR BUDDY</Navbar.Brand>
+                    <Navbar.Toggle className=' bg-dark' />
+                    <Navbar.Collapse className="justify-content-end text-dark">
                         <Nav className="ms-auto">
                             <Nav.Link as={HashLink} to="/home" className="fw-bold text-dark">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/Tours" className="fw-bold text-dark">Tours</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#popular-tours" className="fw-bold text-dark">Tours</Nav.Link>
 
                             {/* Check login or not and show the name */}
                             {user?.displayName &&

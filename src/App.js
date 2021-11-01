@@ -11,6 +11,7 @@ import BookTour from './components/BookTour/BookTour';
 import AddTourPackage from './components/AddTourPackage/AddTourPackage';
 import ManageAllOrder from './components/ManageAllOrder/ManageAllOrder';
 import MyOrder from './components/MyOrder/MyOrder';
+import UnderConstruction from './components/UnderConstruction/UnderConstruction';
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
             </PrivateRoute>
             <Route path="/signIn">
               <SignIn></SignIn>
+            </Route>
+            <Route path="/underconstruction">
+              <UnderConstruction></UnderConstruction>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
