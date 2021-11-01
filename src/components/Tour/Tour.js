@@ -19,7 +19,7 @@ const Package = (props) => {
                                 </div>
                                 <p className='mx-3 text-muted fw-bold mt-2'>{Duration}</p>
                             </div>
-                            <Link to={`/booktour/${_id}`}> <button className="btn btn-primary ">Book Tour</button></Link>
+                            <Link to={`/booktour/${_id}`}> <button className="btn btn-danger w-100 fw-bold ">Book Tour</button></Link>
                         </Card.Body>
                     </Card>
                 </Col>
