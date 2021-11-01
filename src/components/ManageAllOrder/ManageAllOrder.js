@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import useAuth from '../../hook/useAuth';
 
 
 const ManageAllOrder = () => {
 
-    const { user } = useAuth();
+
     const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
@@ -37,21 +36,6 @@ const ManageAllOrder = () => {
 
     return (
         <Container>
-            {/* <div>
-                <h1>This si manage order</h1>
-                <h2>{user.email}</h2>
-                {
-                    allOrders.map(order =>
-                        <div>
-                            <h1>This si asingle order {order.name}</h1>
-                            <h1>This si asingle order {order.email}</h1>
-                            <h1>This si asingle order {order._id}</h1>
-                            <button onClick={() => handleDelete(order._id)}>Delete User</button>
-                        </div>
-                    )
-                }
-
-            </div> */}
             <div>
                 <h1 className='text-uppercase my-5 fw-bold fs-1 text-danger'>Manage All order</h1>
                 {
