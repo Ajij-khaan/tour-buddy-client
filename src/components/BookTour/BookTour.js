@@ -33,7 +33,7 @@ const BookTour = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         // console.log(data);
-        const newOrder = { name: data.name, email: data.email, orderDetails: showTour };
+        const newOrder = { name: data.name, email: data.email, shipping: data.address, orderDetails: showTour };
         console.log(newOrder)
 
         fetch('http://localhost:5000/manageorder', {
@@ -80,8 +80,11 @@ const BookTour = () => {
                         <h1 className='text-center fw-bold fs-3'>Book Your Tour</h1>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input {...register("name",)} placeholder="Name" defaultValue={user?.displayName} className='p-3 border-2 border-danger mb-3 w-100 mt-3' />
+
                             <input {...register("email",)} placeholder="Email" defaultValue={user?.email} className='p-3 border-2 border-danger mb-3 w-100' />
+
                             <input {...register("address",)} placeholder="Shipping Address" className='p-3 border-2 border-danger mb-3 w-100' />
+
                             <br />
                             <input type="submit" value="Book Now" className='btn btn-danger text-white fw-bold px-5 w-100' />
                         </form>
