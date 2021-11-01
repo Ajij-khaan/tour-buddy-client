@@ -15,8 +15,7 @@ const MyOrder = () => {
     }, [])
 
     const myOrder = allOrders.filter(order => order?.email === user?.email);
-    // setAllOrders(myOrder);
-    // console.log(myOrder);
+
 
     const handleDelete = id => {
         console.log(id);
@@ -74,7 +73,7 @@ const MyOrder = () => {
                                                             <p className='fw-bold text-danger fs-3'>$ {order?.orderDetails?.price}</p>
                                                             <p className='fs-5 mt-2 text-muted fw-bold ms-2'>/Per Person</p>
                                                         </div>
-                                                        <p className='fs-5 mt-2 ms-3 fw-bold '>{order?.orderDetails?.Duration}</p>
+                                                        <p className='fs-5 mt-2 ms-3 fw-bold text-dark'>{order?.orderDetails?.Duration}</p>
                                                     </div>
                                                     <button onClick={() => handleDelete(order._id)} className='w-50 btn btn-danger fw-bold w-100'>Delete Order</button>
                                                 </div>

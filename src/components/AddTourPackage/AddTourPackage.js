@@ -44,7 +44,7 @@ const AddTourPackage = () => {
                 <br />
                 <input type="text" ref={priceRef} placeholder="Price" className='p-3 borer border-danger mb-2  w-50' />
                 <br />
-                <input type="text" ref={durationRef} placeholder="Duration. ex: 3 Night / 6 Days" className='p-3 borer border-danger mb-2  w-50' />
+                <input type="text" ref={durationRef} placeholder="Duration. ex: 3 Day / 4 Night" className='p-3 borer border-danger mb-2  w-50' />
                 <br />
                 <input type="text" ref={descriptionRef} placeholder="Description" className='p-3 borer border-danger mb-2  w-50' />
                 <br />

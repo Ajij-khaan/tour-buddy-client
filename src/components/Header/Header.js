@@ -17,7 +17,7 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <Nav.Link as={HashLink} to="/home" className="fw-bold text-dark">Home</Nav.Link>
                             <Nav.Link as={HashLink} to="/home#popular-tours" className="fw-bold text-dark">Tours</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#contact" className="fw-bold text-dark">Contact</Nav.Link>
+
 
                             {/* Check login or not and show the name */}
                             {user?.displayName &&
@@ -36,6 +36,7 @@ const Header = () => {
 
                                 <Nav.Link as={Link} to="/signIn" className="text-white btn btn-danger rounded-pill px-4 fw-bold">SignIn</Nav.Link>
                             }
+                            <Nav.Link as={HashLink} to="/home#contact" className="fw-bold text-dark">Contact</Nav.Link>
 
                             {user?.displayName &&
                                 <div className="ms-5 d-flex align-items-center text-danger">Howday! {user.displayName} </div>
