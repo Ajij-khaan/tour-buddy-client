@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Tour from '../Tour/Tour'
 
 const Package = () => {
@@ -13,13 +13,14 @@ const Package = () => {
     console.log(tours);
     return (
         <div className="bg-light" >
-            <h1 id="featured-services" className="font-body fw-bold mb-4 pt-5 fs-1">MOST POPULAR TOURS</h1>
+            <h1 id="featured-services" className="font-body fw-bold mb-4 pt-5 fs-1 font-roboto font-roboto">MOST POPULAR TOURS</h1>
             <Container className="mb-5">
                 <Row id="services" xs={1} md={2} lg={3} className="g-4 mt-5border-primary">
                     {
                         tours.map(tour => <Tour key={tour._id} tour={tour}></Tour>)
                     }
                 </Row>
+
             </Container>
         </div>
     );
