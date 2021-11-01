@@ -38,14 +38,19 @@ const AddTourPackage = () => {
 
     return (
         <div>
-            <h1>Please add a Tour Package</h1>
+            <h1 className='text-uppercase fw-bold text-danger my-5'>Please Add a TOUR PACKAGE</h1>
             <form onSubmit={handleAddTour}>
-                <input type="text" ref={nameRef} placeholder="name" />
-                <input type="text" ref={priceRef} placeholder="price" />
-                <input type="text" ref={durationRef} placeholder="duration" />
-                <input type="text" ref={descriptionRef} placeholder="description" />
-                <input type="text" ref={imgRef} placeholder="img" />
-                <input type="submit" value="Submit" />
+                <input type="text" ref={nameRef} placeholder="Tour Package Name" className='p-3 borer border-danger mb-2 w-50' />
+                <br />
+                <input type="text" ref={priceRef} placeholder="Price" className='p-3 borer border-danger mb-2  w-50' />
+                <br />
+                <input type="text" ref={durationRef} placeholder="Duration. ex: 3 Night / 6 Days" className='p-3 borer border-danger mb-2  w-50' />
+                <br />
+                <input type="text" ref={descriptionRef} placeholder="Description" className='p-3 borer border-danger mb-2  w-50' />
+                <br />
+                <input type="text" ref={imgRef} placeholder="Image URL" className='p-3 borer border-danger mb-2  w-50' />
+                <br />
+                <input type="submit" value="Submit" className='p-3 btn btn-danger mb-2  w-50' />
 
             </form>
 

@@ -30,12 +30,15 @@ const SignIn = () => {
     console.log(user);
 
     return (
-        <div className="">
-            <h1>Signin</h1>
-
-            <div className="border border-gray rounded-pill px-5 py-1 mb-3 fw-bold d-flex justify-content-center">
-                <img src={googleImg} alt="" />
-                <Button onClick={handleGoogleSignin} className="ps-3 fw-bold border-0">Sign In With Google</Button>
+        <div>
+            <div class="alert alert-warning fs-4" role="alert">
+                Sign To Continue
+            </div>
+            <div className='d-flex justify-content-center'>
+                <div className="btn btn-danger px-5 py-1 mb-3 fw-bold w-25">
+                    <img src={googleImg} alt="" />
+                    <Button onClick={handleGoogleSignin} className=" fw-bold text-white btn">Sign In With Google</Button>
+                </div>
             </div>
         </div>
     );

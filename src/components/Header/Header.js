@@ -9,38 +9,38 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" sticky="top" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark">
                 <Container className="fw-bold">
-                    <Navbar.Brand as={Link} to="/home" className="fw-bold">TOUR BUDDY</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home" className="fw-bold text-dark">TOUR BUDDY</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav className="ms-auto">
-                            <Nav.Link as={HashLink} to="/home">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/Tours">Tours</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home" className="fw-bold text-dark">Home</Nav.Link>
+                            <Nav.Link as={HashLink} to="/Tours" className="fw-bold text-dark">Tours</Nav.Link>
 
                             {/* Check login or not and show the name */}
                             {user?.displayName &&
 
-                                <Nav.Link as={Link} to="/myorder" className="fw-bold">My Orders</Nav.Link>
+                                <Nav.Link as={Link} to="/myorder" className="fw-bold text-dark">My Orders</Nav.Link>
                             }
                             {user?.displayName &&
 
-                                <Nav.Link as={Link} to="/manageallorder" cclassName="fw-bold">Manage All Orders</Nav.Link>
+                                <Nav.Link as={Link} to="/manageallorder" className="fw-bold text-dark">Manage All Orders</Nav.Link>
                             }
                             {user?.displayName &&
 
-                                <Nav.Link as={Link} to="/addtour" className="fw-bold">Add Tours</Nav.Link>
+                                <Nav.Link as={Link} to="/addtour" className="fw-bold text-dark">Add Tours</Nav.Link>
                             }
                             {!user?.displayName &&
 
-                                <Nav.Link as={Link} to="/signIn" className="btn btn-primary rounded-pill px-4 fw-bold">SignIn</Nav.Link>
+                                <Nav.Link as={Link} to="/signIn" className="text-white btn btn-danger rounded-pill px-4 fw-bold">SignIn</Nav.Link>
                             }
 
                             {user?.displayName &&
-                                <div className="text-white d-flex align-items-center">Howday! {user.displayName} </div>
+                                <div className="ms-5 d-flex align-items-center text-danger">Howday! {user.displayName} </div>
                             }
                             {user?.displayName &&
-                                <Button onClick={logOut} className="text-white btn btn-success rounded-pill ms-2 fw-bold">Sign Out </Button>
+                                <Button onClick={logOut} className="text-white btn btn-danger rounded-pill ms-2 fw-bold">Sign Out </Button>
                             }
                         </Nav>
                     </Navbar.Collapse>
