@@ -13,10 +13,11 @@ const Footer = () => {
                         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                             <h5 class="text-uppercase text-danger fw-bold">Tour Buddy</h5>
 
-                            <p>
+                            <p id='contact'>
                                 Govt. Approved Travel Agent,<br />
                                 106-109 Rose View Complex (Ground Floor), <br />Shahjalal Upashahar Main Rd, Sylhet 3100
-                                <br />Email : latiftravels@gmail.com
+                                <br />Email : tourbuddy@gmail.com
+                                <br />Phone : 01742824576
                             </p>
                         </div>
 

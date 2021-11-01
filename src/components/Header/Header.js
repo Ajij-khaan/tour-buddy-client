@@ -17,6 +17,7 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <Nav.Link as={HashLink} to="/home" className="fw-bold text-dark">Home</Nav.Link>
                             <Nav.Link as={HashLink} to="/home#popular-tours" className="fw-bold text-dark">Tours</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#contact" className="fw-bold text-dark">Contact</Nav.Link>
 
                             {/* Check login or not and show the name */}
                             {user?.displayName &&
